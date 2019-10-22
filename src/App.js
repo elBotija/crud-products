@@ -34,7 +34,10 @@ function App() {
             <Productos products={getProducts}/>
           )}/>
           <Route exact path="/productos/:id" component={Producto}/>
-          <Route exact path="/productos/editar/:id" component={EditarProducto}/>
+          <Route exact path="/productos/editar/:id" render={props => {
+            const product = getProducts.filter(p => p.id === Number(props.match.params.id))
+            return <EditarProducto product={product[0]} reload={setReload}/>
+          }}/>
         </Switch>
       </div>
       <p className="mt-4 p2 text-center">Power by elbotija</p>
