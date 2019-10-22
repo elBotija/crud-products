@@ -11,21 +11,25 @@ import axios from 'axios';
 function App() {
 
   const [ getProducts, setProducts ] = useState([]);
-
+  const [ getReload, setReload ] = useState(true)
+ 
   useEffect(() => {
-    const getApi = async () => {
-      const result = await axios.get('http://localhost:3004/restaurant');
-      setProducts(result.data)
+    if(getReload){
+      const getApi = async () => {
+        const result = await axios.get('http://localhost:3004/restaurant');
+        setProducts(result.data)
+      }
+      getApi()
+      setReload(false)
     }
-    getApi()
-  },[])
+  },[getReload])
 
   return (
     <Router>
       <Header/>
       <div className="container mt-5">
         <Switch>
-          <Route exact path="/nuevo-producto" component={AgregarProducto}/>
+          <Route exact path="/nuevo-producto" render={ () =>(<AgregarProducto reload={setReload}/>)}/>
           <Route exact path="/productos" render={()=>(
             <Productos products={getProducts}/>
           )}/>

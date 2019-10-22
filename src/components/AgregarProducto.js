@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import ErrorMessage from './ErrorMessage'
 import axios from 'axios'
+import Swal from 'sweetalert2';
+import { withRouter } from 'react-router-dom'
 
-export default function AgregarProducto() {
+export default withRouter(function AgregarProducto({history, reload}) {
 
   const [getProduct, setProduct ] = useState('')
   const [getPrice, setPrice ] = useState('')
@@ -26,10 +28,23 @@ export default function AgregarProducto() {
         price: getPrice,
         category: getCategory
       })
-      console.log(res)
+      if(res.status > 200 && res.status < 300 ){
+        Swal.fire(
+          'Se Creo Correctamente',
+          'Tu nuevo producto',
+          'success'
+        )
+      }
     } catch(error) {
       console.log(error)
+      Swal.fire({
+        type: 'error',
+        title: 'Error',
+        text: 'Ocurrio un error!'
+      })
     }
+    reload(true)
+    history.push('/productos')
   }
 
   const showError = () => {
@@ -129,4 +144,4 @@ export default function AgregarProducto() {
   </div>
 
   )
-}
+})

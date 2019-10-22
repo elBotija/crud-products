@@ -9,7 +9,7 @@ export default function Productos({products}) {
       </h1>
       <ul className="list-group mt-5">
         {products.map(p => (
-          <ProductoLista producto={p}/>
+          <ProductoLista key={p.id} producto={p}/>
         ))}
       </ul>
     </React.Fragment>
