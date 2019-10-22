@@ -1,16 +1,22 @@
 {
-  "posts":[
+  "restaurant": [
     {
-      "id": 1,
-      "title": "Post 1"
+      "price": 200,
+      "product": "Torta",
+      "category": "postre",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Post 2"
+      "price": 100,
+      "product": "Bife",
+      "category": "comida",
+      "id": 2
     },
     {
-      "id": 3,
-      "title": "Post 3"
+      "product": "carne con papas",
+      "price": "130",
+      "category": "cortes",
+      "id": 3
     }
   ]
 }
