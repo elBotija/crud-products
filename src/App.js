@@ -31,7 +31,7 @@ function App() {
         <Switch>
           <Route exact path="/nuevo-producto" render={ () =>(<AgregarProducto reload={setReload}/>)}/>
           <Route exact path="/productos" render={()=>(
-            <Productos products={getProducts}/>
+            <Productos products={getProducts} reload={setReload}/>
           )}/>
           <Route exact path="/productos/:id" component={Producto}/>
           <Route exact path="/productos/editar/:id" render={props => {

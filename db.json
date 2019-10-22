@@ -1,40 +1,16 @@
 {
   "restaurant": [
     {
-      "price": 200,
-      "product": "Torta",
-      "category": "postre",
-      "id": 1
-    },
-    {
-      "price": 100,
-      "product": "Bife",
-      "category": "comida",
-      "id": 2
-    },
-    {
       "product": "carne con papas",
       "price": "130",
       "category": "cortes",
       "id": 3
     },
     {
-      "product": "cesar",
-      "price": "200",
-      "category": "ensalada",
+      "product": "pastel de papas",
+      "price": "222",
+      "category": "cortes",
       "id": 4
-    },
-    {
-      "product": "Pastel de papa",
-      "price": "500",
-      "category": "cortes",
-      "id": 5
-    },
-    {
-      "product": "Pastel de Papas con pasas",
-      "price": "115",
-      "category": "cortes",
-      "id": 6
     }
   ]
 }
